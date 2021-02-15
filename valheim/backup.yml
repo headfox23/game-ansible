@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "Creating backup directory"
+    shell: mkdir -p {{app_dir}}/backup
+  - name: "Backup world"
+    shell: tar -zcvf "{{app_dir}}/backup/backup-$(date '+%Y-%m-%d').gz" ~/.config/unity3d
