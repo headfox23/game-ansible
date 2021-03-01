@@ -2,9 +2,9 @@
 - hosts: localhost
   tasks:
   - name: Confirm Valheim is running
-    command: ps aux | grep -ie "valheim_server.x86_64" | grep -v grep
+    command: pgrep valheim_server
     register: valheim_pid
     ignore_errors: yes
   - name: "Stopping Valheim Server!"
-    shell: ps aux | grep -ie "valheim_server.x86_64" | grep -v grep | awk '{print $2}' | xargs kill -9
+    shell: kill {{valheim_pid.stdout}}
     when: valheim_pid.stdout != ""
