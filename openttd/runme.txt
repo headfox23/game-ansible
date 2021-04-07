@@ -1,1 +1,1 @@
-sudo docker run --name openttd -d -v /home/<username>/openttd:/home/openttd -p 3979:3979/tcp -p 3979:3979/udp headfox/openttd:1.11.0
+sudo docker run -d -e "loadgame=last-autosave" --name openttd -v /home/heisigh/openttd:/home/openttd/ -p 3979:3979/tcp -p 3979:3979/udp headfox/openttd:1.11.0

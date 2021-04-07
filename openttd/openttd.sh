@@ -83,6 +83,6 @@ if [ ${LOADGAME_CHECK} != "x" ]; then
         esac
 else
 	echo "\$loadgame (\"${loadgame}\") not set, starting new game"
-        su -l openttd -c "/usr/games/openttd -D -x -c ~/openttd.cfg"
+        su -l openttd -c "/usr/games/openttd -D -x"
         exit 0
 fi
