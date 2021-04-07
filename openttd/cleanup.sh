@@ -2,9 +2,9 @@
 set -e
 set -x
 
-apt-get remove -yqq unzip wget
-apt-get autoremove -yqq
-apt-get autoclean -yqq
+apt-get remove -y unzip wget
+apt-get autoremove -y
+apt-get autoclean -y
 
 rm -rf /var/lib/apt/lists/*
 rm -f /etc/dpkg/dpkg.cfg.d/02apt-speedup
