@@ -5,8 +5,8 @@ savegame="${savepath}/${savename}"
 LOADGAME_CHECK="${loadgame}x"
 loadgame=${loadgame:-'false'}
 
-PUID=${PUID:-911}
-PGID=${PGID:-911}
+PUID=${PUID:-1000}
+PGID=${PGID:-1000}
 PHOME=${PHOME:-"/home/openttd"}
 USER=${USER:-"openttd"}
 
@@ -83,6 +83,6 @@ if [ ${LOADGAME_CHECK} != "x" ]; then
         esac
 else
 	echo "\$loadgame (\"${loadgame}\") not set, starting new game"
-        su -l openttd -c "/usr/games/openttd -D -x"
+        su -l openttd -c "/usr/games/openttd -D -x -c ~/openttd.cfg"
         exit 0
 fi
